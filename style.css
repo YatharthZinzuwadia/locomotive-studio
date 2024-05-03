@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Freight Big Pro";
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#main {
+  background-color: #f5e41b;
+}
+
+#loader {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  position: absolute;
+  color: #fff;
+  display: flex;
+  /* display: none; */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  z-index: 99;
+}
+
+#yellow1 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #f5e41b;
+  z-index: 8;
+}
+
+#yellow2 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: #f5e41b;
+  z-index: 7;
+}
+
+#loader video {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 6;
+}
+
+#loader h1 {
+  font-size: 6.5vw;
+  font-weight: 200;
+  line-height: 4.5vw;
+  letter-spacing: -3px;
+  position: relative;
+  z-index: 9;
+}
+
+#nav {
+  position: absolute;
+  width: 100%;
+  padding: 30px 50px;
+  z-index: 10;
+  color: #000;
+  /* background: #000; */
+}
+
+#nav #logo {
+  font-weight: 800;
+  font-size: 2vw;
+  margin-left: 80px;
+  width: 20%;
+  color: #000;
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  background-color: #f5e41b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+#page1 h1 {
+  font-size: 6.5vw;
+  font-weight: 200;
+  line-height: 4.5vw;
+  letter-spacing: -3px;
+}
+
+#page2 {
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.elem {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.elem .blur {
+  position: absolute;
+  width: 35%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, #f5e31bf0, #f5e41b, #f5e31bf6);
+  box-shadow: 10px 0 20px 100px #f5e41b, -10px 0 20px 100px #f5e41b;
+  height: 100%;
+  z-index: 8;
+}
+
+.elem:hover .moving {
+  transform: translate(0, -45%) scaleY(1);
+}
+
+.elem h2 {
+  font-size: 7.5vw;
+  text-transform: uppercase;
+  z-index: 9;
+  line-height: 5vw;
+  position: relative;
+  font-weight: 100;
+}
+
+.elem .moving {
+  background-color: #f5e41b;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  padding: 7px 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -45%) scaleY(0);
+  transition: all ease 0.3s;
+}
+
+.elem .moving .moving-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: moving;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.elem:hover h2 {
+  font-style: italic;
+}
+
+.elem .moving .moving-in h5 {
+  color: black;
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 400;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-transform: uppercase;
+  transition: all ease 0.3s;
+  transition-delay: 0.3;
+  margin-right: 30px;
+}
+
+@keyframes moving {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+}
