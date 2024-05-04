@@ -105,7 +105,7 @@ body {
   color: #fff;
   display: flex;
   align-items: center;
-  
+
   justify-content: center;
   text-align: center;
   flex-direction: column;
@@ -152,7 +152,7 @@ body {
   position: absolute;
   top: 50%;
   transform: translate(0, -45%) scaleY(0);
-  transition: all ease 0.3s;
+  /* transition: all ease 0.3s; */
 }
 
 .elem .moving .moving-in {
@@ -190,7 +190,97 @@ body {
 }
 
 #page3 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #fff;
+}
+
+.image-container {
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.image-div {
+  position: relative;
+  width: 30vw;
+  overflow: hidden;
+  margin: 20px;
+}
+
+.image-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  background-color: #0000001a;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all ease 0.3s;
+  z-index: 9;
+}
+.overlay p {
+  font-size: 4vw;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 3vw;
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+
+.image-div:hover .overlay {
+  background-color: #000000b6;
+}
+
+.image-div:hover .overlay p {
+  opacity: 1;
+}
+
+.image-div:hover img {
+  scale: 1.2;
+  transition: all ease 0.3s;
+}
+
+.line:nth-child(1) .image-div:nth-child(2) {
+  height: 800px;
+}
+
+.footer {
+  height: 40vh;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer .foot {
+  height: 50%;
+  width: 100%;
+  background-color: #000;
+  color: white;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "gilroy";
+  font-size: larger;
+}
+
+.footer h2 {
+  font-family: gilroy;
+  text-transform: uppercase;
+  font-size: 1vw;
+  cursor: pointer;
 }

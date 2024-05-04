@@ -40,6 +40,8 @@ const scroll = new LocomotiveScroll({
   smooth: true,
 });
 
+scroll.on("click", function(){})
+
 var elems = document.querySelectorAll(".elem");
 var page2 = document.querySelector("#page2");
 
