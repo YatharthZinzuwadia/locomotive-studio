@@ -36,8 +36,40 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Configure GitHub Pages
+        run: |
+          node -e "
+          const fs = require('fs');
+          const path = 'next.config.ts';
+          let config = fs.readFileSync(path, 'utf8');
+
+          config = config.replace(
+            'const nextConfig: NextConfig = {};',
+            \`const nextConfig: NextConfig = {
+              output: 'export',
+              basePath: '/locomotive-studio',
+              assetPrefix: '/locomotive-studio/',
+              images: {
+                unoptimized: true,
+              },
+            };\`
+          );
+
+          fs.writeFileSync(path, config);
+          "
+
       - name: Build
         run: yarn build
+
+      - name: Verify export
+        run: |
+          if [ ! -d "./out" ]; then
+            echo "ERROR: ./out directory was not generated."
+            exit 1
+          fi
+
+          echo "Static export generated successfully."
+          ls -la ./out
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
